@@ -35,7 +35,7 @@ const Logo = ({ size = 40, showText = true, className = '' }) => {
             </svg>
             {showText && (
                 <span className="logo-text">
-                    CoreWare<span className="logo-highlight">Technologies</span>
+                    TechBridge<span className="logo-highlight">Solutions</span>
                 </span>
             )}
         </div>

@@ -74,7 +74,7 @@ const Contact = () => {
                                 <div className="icon-box"><Mail size={20} /></div>
                                 <div>
                                     <h3>Email</h3>
-                                    <p>hello@corewaretechnologies.com</p>
+                                    <p>hello@techbridgesolutions.com</p>
                                 </div>
                             </div>
                             <div className="contact-item">
@@ -175,7 +175,7 @@ const Contact = () => {
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
                             <Marker position={[6.6885, -1.6244]}>
-                                <Popup>CoreWare Technologies, Kumasi, Ghana</Popup>
+                                <Popup>TechBridge Solutions, Kumasi, Ghana</Popup>
                             </Marker>
                         </MapContainer>
                     </Motion.div>

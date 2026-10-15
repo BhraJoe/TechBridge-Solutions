@@ -33,8 +33,8 @@ const Home = () => {
     ];
 
     const testimonials = [
-{ name: "Sarah Johnson", role: "CEO, TechStart Inc.", text: "CoreWare delivered a stunning platform ahead of schedule. Their expertise is unmatched.", rating: 5 },
-                        { name: "Michael Chen", role: "Founder, RetailFlow", text: "Working with CoreWare transformed our digital presence. Highly recommended!", rating: 5 },
+{name: "Sarah Johnson", role: "CEO, TechStart Inc.", text: "TechBridge Solutions delivered a stunning platform ahead of schedule. Their expertise is unmatched.", rating: 5},
+                        {name: "Michael Chen", role: "Founder, RetailFlow", text: "Working with TechBridge Solutions transformed our digital presence. Highly recommended!", rating: 5},
         { name: "Aisha Patel", role: "CTO, HealthBridge", text: "Exceptional engineering and communication. They truly understand enterprise needs.", rating: 5 }
     ];
 
@@ -62,7 +62,7 @@ const Home = () => {
                             Building <span className="text-gradient">Digital Excellence</span> for Modern Businesses.
                         </Motion.h1>
                         <Motion.p className="hero-subtitle" variants={itemVariants}>
-                            We are CoreWare Technologies. A team of Software Engineers and Creative Technologists. We build premium web applications and digital solutions that scale.
+                            We are TechBridge Solutions. A team of Software Engineers and Creative Technologists. We build premium web applications and digital solutions that scale.
                         </Motion.p>
                         <Motion.div className="hero-cta" variants={itemVariants}>
                             <Link to="/contact" className="btn-primary btn-lg">
@@ -152,7 +152,7 @@ const Home = () => {
             <section className="section why-us-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Why CoreWare Technologies?</h2>
+                        <h2>Why TechBridge Solutions?</h2>
                         <p>It's not just about code. It's about solving real problems.</p>
                     </div>
 
