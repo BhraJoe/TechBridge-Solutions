@@ -46,6 +46,7 @@ const Navbar = () => {
                                 <Link
                                     to={link.path}
                                     className={location.pathname === link.path ? 'active' : ''}
+                                    aria-current={location.pathname === link.path ? 'page' : undefined}
                                 >
                                     {link.name}
                                 </Link>
@@ -61,7 +62,9 @@ const Navbar = () => {
                 <button
                     className="navbar-toggle"
                     onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle navigation"
+                    aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-navigation"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -71,17 +74,20 @@ const Navbar = () => {
                     {isOpen && (
                         <Motion.div
                             className="navbar-mobile"
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
+                            id="mobile-navigation"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
                         >
+                            <p className="mobile-menu-label">Navigate</p>
                             <ul className="mobile-nav-links">
                                 {navLinks.map((link) => (
                                     <li key={link.name}>
                                         <Link
                                             to={link.path}
                                             className={location.pathname === link.path ? 'active' : ''}
+                                            aria-current={location.pathname === link.path ? 'page' : undefined}
                                         >
                                             {link.name}
                                         </Link>
