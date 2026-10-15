@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import LoadingSpinner from './components/LoadingSpinner';
+import SkeletonLoader from './components/SkeletonLoader';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
@@ -44,7 +44,7 @@ function App() {
         <div className="app-container">
           <Navbar />
           <main>
-            <Suspense fallback={<LoadingSpinner />}>
+            <Suspense fallback={<SkeletonLoader />}>
               <AnimatedRoutes />
             </Suspense>
           </main>
