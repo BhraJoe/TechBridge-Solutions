@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-light);
-  padding: 4rem 0 0;
+  padding: 4.5rem 0 0;
   margin-top: auto;
 }
 
@@ -48,6 +48,7 @@
   background-color: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   transition: all var(--transition-fast);
+  border: 1px solid var(--border-light);
 }
 
 .social-links a:hover {
@@ -78,6 +79,11 @@
 
 .footer-links a:hover {
   color: var(--accent-primary);
+}
+
+.footer-contact li svg {
+  flex: 0 0 auto;
+  color: var(--text-tertiary);
 }
 
 .footer-contact li {

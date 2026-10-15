@@ -1,37 +1,56 @@
 /* Portfolio Hero */
 .portfolio-hero-section {
-  padding: 12rem 0 8rem;
-  min-height: 50vh;
+  padding: calc(var(--header-height) + 4rem) 0 4rem;
+  min-height: 58vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary);
+  background:
+    radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.055), transparent 48%),
+    linear-gradient(180deg, #101010 0%, var(--bg-primary) 100%);
   text-align: center;
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .portfolio-hero-section h1 {
-  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 800;
   margin-bottom: 1.5rem;
   color: var(--text-primary);
+  letter-spacing: -0.055em;
 }
 
-.hero-tagline {
-  font-size: 1.25rem;
+.portfolio-hero-section .hero-tagline {
+  font-size: 0.78rem;
   color: var(--text-tertiary);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
   margin-bottom: 1.5rem;
 }
 
-.hero-description {
+.portfolio-hero-section .hero-description {
   font-size: 1.2rem;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto;
+}
+
+.portfolio-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.portfolio-header h2 {
+  margin: 0 0 0.75rem;
+  color: var(--text-primary);
+  font-size: clamp(1.9rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.04em;
+}
+
+.portfolio-header p {
+  color: var(--text-secondary);
 }
 
 /* Filter Tabs */
