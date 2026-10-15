@@ -45,6 +45,8 @@ const Home = () => {
             {/* HERO SECTION */}
             <section className="hero-section">
                 <div className="hero-background">
+                    <img className="hero-background-image" src={heroEngineering} alt="" aria-hidden="true" />
+                    <div className="hero-background-shade"></div>
                     <div className="hero-gradient-orb orb-1"></div>
                     <div className="hero-gradient-orb orb-2"></div>
                     <div className="hero-grid-pattern"></div>
