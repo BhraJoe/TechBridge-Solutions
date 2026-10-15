@@ -6,7 +6,8 @@
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.055), transparent 48%),
+    linear-gradient(90deg, rgba(8, 8, 8, 0.82), rgba(8, 8, 8, 0.6)),
+    url('../assets/contact-office.jpg') center 52% / cover no-repeat,
     linear-gradient(180deg, #101010 0%, var(--bg-primary) 100%);
   text-align: center;
   margin-bottom: 0;

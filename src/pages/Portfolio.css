@@ -6,7 +6,8 @@
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse at 50% 15%, rgba(255, 255, 255, 0.055), transparent 48%),
+    linear-gradient(90deg, rgba(8, 8, 8, 0.78), rgba(8, 8, 8, 0.55)),
+    url('../assets/project-fintech-photo.jpg') center 44% / cover no-repeat,
     linear-gradient(180deg, #101010 0%, var(--bg-primary) 100%);
   text-align: center;
   position: relative;

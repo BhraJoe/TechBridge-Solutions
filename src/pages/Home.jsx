@@ -3,6 +3,7 @@ import { motion as Motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, Monitor, Code, Rocket, CheckCircle, Layout, Star, Zap, Shield, ShieldCheck, Users, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ServiceCard from '../components/ServiceCard';
+import heroEngineering from '../assets/hero-engineering.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -124,9 +125,12 @@ const Home = () => {
                         initial={{ opacity: 0, y: 24, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.25 }}
-                        aria-label="A glimpse into TechBridge's digital product work"
                     >
-                        <div className="hero-visual-image" aria-hidden="true"></div>
+                        <img
+                            className="hero-visual-image"
+                            src={heroEngineering}
+                            alt="Developers collaborating around laptops"
+                        />
                         <div className="hero-visual-shade" aria-hidden="true"></div>
                         <div className="hero-visual-topline">
                             <span className="visual-status"><span></span> Product engineering</span>

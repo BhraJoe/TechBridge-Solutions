@@ -7,7 +7,10 @@
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(165deg, #0a0a0a 0%, #141414 100%);
+    background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.84), rgba(8, 8, 8, 0.62)),
+        url('../assets/services-engineering.jpg') center 48% / cover no-repeat,
+        linear-gradient(165deg, #0a0a0a 0%, #141414 100%);
     overflow: hidden;
 }
 

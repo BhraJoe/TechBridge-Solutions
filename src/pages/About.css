@@ -5,7 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(165deg, #0a0a0a 0%, #111111 100%);
+    background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.88), rgba(8, 8, 8, 0.65)),
+        url('../assets/about-team.jpg') center 46% / cover no-repeat,
+        linear-gradient(165deg, #0a0a0a 0%, #111111 100%);
     position: relative;
     overflow: hidden;
 }

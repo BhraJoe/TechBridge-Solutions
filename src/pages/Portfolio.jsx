@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Globe, Palette, Rocket, ShieldCheck, Code, Smartphone, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import projectFintech from '../assets/project-fintech.png';
-import projectEcommerce from '../assets/project-ecommerce.png';
-import projectHealth from '../assets/project-health.png';
-import projectBanking from '../assets/project-banking.png';
+import projectFintech from '../assets/project-fintech-photo.jpg';
+import projectEcommerce from '../assets/project-ecommerce-photo.jpg';
+import projectHealth from '../assets/project-health-photo.jpg';
+import projectBanking from '../assets/project-banking-photo.jpg';
 import './Portfolio.css';
 
 const Portfolio = () => {
