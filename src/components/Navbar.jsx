@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 import './Navbar.css';
@@ -23,6 +22,29 @@ const Navbar = () => {
         setIsOpen(false); // eslint-disable-line react-hooks/set-state-in-effect
     }, [location]);
 
+    useEffect(() => {
+        if (!isOpen) return undefined;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') setIsOpen(false);
+        };
+        const handleResize = () => {
+            if (window.innerWidth > 840) setIsOpen(false);
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [isOpen]);
+
     const navLinks = [
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
@@ -34,7 +56,7 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-container">
-                <Link to="/" className="navbar-logo">
+                <Link to="/" className="navbar-logo" aria-label="TechBridge Solutions home">
                     <Logo size={28} />
                 </Link>
 
@@ -61,47 +83,38 @@ const Navbar = () => {
                 {/* Mobile Toggle */}
                 <button
                     className="navbar-toggle"
+                    type="button"
                     onClick={() => setIsOpen(!isOpen)}
                     aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
                     aria-expanded={isOpen}
-                    aria-controls="mobile-navigation"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
                 {/* Mobile Menu */}
-                <AnimatePresence>
-                    {isOpen && (
-                        <Motion.div
-                            className="navbar-mobile"
-                            id="mobile-navigation"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                        >
-                            <p className="mobile-menu-label">Navigate</p>
-                            <ul className="mobile-nav-links">
-                                {navLinks.map((link) => (
-                                    <li key={link.name}>
-                                        <Link
-                                            to={link.path}
-                                            className={location.pathname === link.path ? 'active' : ''}
-                                            aria-current={location.pathname === link.path ? 'page' : undefined}
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                                <li>
-                                    <Link to="/contact" className="btn-primary mobile-btn">
-                                        Start a Project
+                {isOpen && (
+                    <div className="navbar-mobile" id="mobile-navigation">
+                        <p className="mobile-menu-label">Navigate</p>
+                        <ul className="mobile-nav-links">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <Link
+                                        to={link.path}
+                                        className={location.pathname === link.path ? 'active' : ''}
+                                        aria-current={location.pathname === link.path ? 'page' : undefined}
+                                    >
+                                        {link.name}
                                     </Link>
                                 </li>
-                            </ul>
-                        </Motion.div>
-                    )}
-                </AnimatePresence>
+                            ))}
+                            <li>
+                                <Link to="/contact" className="btn-primary mobile-btn">
+                                    Start a Project
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                )}
             </div>
         </nav>
     );
