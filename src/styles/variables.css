@@ -1,11 +1,11 @@
 :root {
   /* Colors - Minimalist Dark Monochrome */
   --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --bg-tertiary: #1e1e1e;
+  --bg-secondary: #191a1c;
+  --bg-tertiary: #25272a;
 
-  --bg-card: rgba(15, 15, 15, 0.7);
-  --bg-card-hover: rgba(25, 25, 25, 0.8);
+  --bg-card: rgba(28, 29, 32, 0.88);
+  --bg-card-hover: rgba(38, 40, 44, 0.94);
 
   --text-primary: #fafafa;
   --text-secondary: #a3a3a3;

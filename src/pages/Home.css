@@ -1452,7 +1452,7 @@
 }
 
 .home-page .stats-section {
-    background: #101010;
+    background: #191a1c;
 }
 
 .home-page .stat-icon,
@@ -1473,17 +1473,17 @@
 .home-page .why-us-section,
 .home-page .testimonials-section,
 .home-page .cta-section {
-    background: #0b0b0b;
+    background: #111214;
 }
 
 .home-page .process-section {
-    background: #111;
+    background: #191a1c;
 }
 
 .home-page .feature-card,
 .home-page .process-step,
 .home-page .testimonial-card {
-    background: #101010;
+    background: #1c1d20;
 }
 
 .home-page .feature-card:hover,
