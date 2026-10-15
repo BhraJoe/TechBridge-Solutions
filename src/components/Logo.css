@@ -1,38 +1,38 @@
 .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo-svg {
-    flex-shrink: 0;
-    transition: transform var(--transition-fast);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
 }
 
 .logo-container:hover .logo-svg {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  white-space: nowrap;
 }
 
 .logo-highlight {
-    color: var(--accent-primary);
+  color: var(--accent-primary);
 }
 
 /* Footer variant */
 .footer-logo .logo-text {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .logo-text {
-        display: none;
-    }
+  .logo-text {
+    display: none;
+  }
 }

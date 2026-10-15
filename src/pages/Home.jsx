@@ -1,41 +1,22 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import { ArrowRight, Code, Monitor, Rocket, CheckCircle, MousePointer2, Shield, Zap, Layout, Clock, Layers, Star } from 'lucide-react';
+import { ArrowRight, Monitor, Code, Rocket, CheckCircle, Layout, Star, Zap, Shield, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ServiceCard from '../components/ServiceCard';
 import './Home.css';
 
 const Home = () => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-        }
-    };
-
     const processSteps = [
-        { step: "01", title: "Discovery", desc: "We dig deep to understand your goals.", icon: Layers },
-        { step: "02", title: "Strategy", desc: "Crafting the blueprint for success.", icon: Code },
-        { step: "03", title: "Development", desc: "Building with precision and care.", icon: Rocket },
-        { step: "04", title: "Launch", desc: "Going live with ongoing support.", icon: Clock }
+        { step: "01", title: "Discovery", desc: "Understand your vision and goals." },
+        { step: "02", title: "Strategy", desc: "Plan technical architecture." },
+        { step: "03", title: "Development", desc: "Build with clean, scalable code." },
+        { step: "04", title: "Launch", desc: "Test, deploy, and support." }
     ];
 
     const testimonials = [
-{name: "Sarah Johnson", role: "CEO, TechStart Inc.", text: "TechBridge Solutions delivered a stunning platform ahead of schedule. Their expertise is unmatched.", rating: 5},
-                        {name: "Michael Chen", role: "Founder, RetailFlow", text: "Working with TechBridge Solutions transformed our digital presence. Highly recommended!", rating: 5},
-        { name: "Aisha Patel", role: "CTO, HealthBridge", text: "Exceptional engineering and communication. They truly understand enterprise needs.", rating: 5 }
+        { name: "Sarah Johnson", role: "CEO, TechStart Inc.", text: "Delivered ahead of schedule. Expertise is unmatched.", rating: 5 },
+        { name: "Michael Chen", role: "Founder, RetailFlow", text: "Transformed our digital presence. Highly recommended!", rating: 5 },
+        { name: "Aisha Patel", role: "CTO, HealthBridge", text: "True understanding of enterprise needs.", rating: 5 }
     ];
 
     return (
@@ -51,45 +32,24 @@ const Home = () => {
                 <div className="container hero-container">
                     <Motion.div
                         className="hero-content"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
                     >
-                        <Motion.span className="hero-badge" variants={itemVariants}>
+                        <span className="hero-badge">
                             <span className="pulse-dot"></span> Available for new projects
-                        </Motion.span>
-                        <Motion.h1 variants={itemVariants}>
-                            Building <span className="text-gradient">Digital Excellence</span> for Modern Businesses.
-                        </Motion.h1>
-                        <Motion.p className="hero-subtitle" variants={itemVariants}>
-                            We are TechBridge Solutions. A team of Software Engineers and Creative Technologists. We build premium web applications and digital solutions that scale.
-                        </Motion.p>
-                        <Motion.div className="hero-cta" variants={itemVariants}>
+                        </span>
+                        <h1>Building Digital Excellence for Modern Businesses.</h1>
+                        <p>A team of Software Engineers and Creative Technologists building premium web applications that scale.</p>
+                        <div className="hero-cta">
                             <Link to="/contact" className="btn-primary btn-lg">
                                 Start a Project
                             </Link>
                             <Link to="/portfolio" className="btn-outline btn-lg">
                                 View Work
                             </Link>
-                        </Motion.div>
-
-                        <Motion.div
-                            className="hero-stats"
-                            variants={itemVariants}
-                        >
-                            <div className="stat-item">
-                                <span className="stat-number">5+</span>
-                                <span className="stat-label">Years Exp.</span>
-                            </div>
-                            <div className="stat-divider"></div>
-                            <div className="stat-item">
-                                <span className="stat-number">20+</span>
-                                <span className="stat-label">Projects</span>
-                            </div>
-                        </Motion.div>
+                        </div>
                     </Motion.div>
-
-
 
                     <Motion.div
                         className="scroll-indicator"
@@ -109,50 +69,37 @@ const Home = () => {
             <section className="section services-preview">
                 <div className="container">
                     <div className="section-header">
-                        <Motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            Our Expertise
-                        </Motion.h2>
-                        <Motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                        >
-                            High-touch solutions for ambitious brands.
-                        </Motion.p>
+                        <h2>Our Expertise</h2>
+                        <p>High-touch solutions for ambitious brands.</p>
                     </div>
                     <div className="services-grid">
                         <ServiceCard
                             icon={Monitor}
                             title="Web Development"
-                            description="Custom, high-performance websites built with modern technologies like React and Next.js."
+                            description="Custom, high-performance websites built with modern technologies."
                             delay={0.1}
                         />
                         <ServiceCard
                             icon={Code}
                             title="Software Solutions"
-                            description="Robust, scalable software tailored to your specific business operations and needs."
+                            description="Robust, scalable software tailored to business operations."
                             delay={0.2}
                         />
                         <ServiceCard
                             icon={Rocket}
                             title="Digital Consulting"
-                            description="Strategic technical advice to help your startup or business navigate the digital landscape."
+                            description="Strategic advice to navigate the digital landscape."
                             delay={0.3}
                         />
                     </div>
                 </div>
             </section>
 
-            {/* WHY CHOOSE US - UPGRADED */}
+            {/* WHY CHOOSE US */}
             <section className="section why-us-section">
                 <div className="container">
                     <div className="section-header">
-                        <h2>Why TechBridge Solutions?</h2>
+                        <h2>Why Choose Us?</h2>
                         <p>It's not just about code. It's about solving real problems.</p>
                     </div>
 
@@ -162,22 +109,11 @@ const Home = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
                         >
                             <div className="feature-icon"><Zap size={28} /></div>
                             <h3>Performance First</h3>
-                            <p>Blazing fast load times and optimized core web vitals for maximum conversion.</p>
-                        </Motion.div>
-
-                        <Motion.div
-                            className="feature-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.1 }}
-                        >
-                            <div className="feature-icon"><Layout size={28} /></div>
-                            <h3>Mobile Adaptive</h3>
-                            <p>Designs that flow seamlessly across every device, from 4K desktops to smartphones.</p>
+                            <p>Blazing fast load times and optimized core web vitals.</p>
                         </Motion.div>
 
                         <Motion.div
@@ -187,9 +123,9 @@ const Home = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            <div className="feature-icon"><Shield size={28} /></div>
-                            <h3>Enterprise Logic</h3>
-                            <p>Robust architecture and clean code that scales with your business needs.</p>
+                            <div className="feature-icon"><Layout size={28} /></div>
+                            <h3>Mobile Adaptive</h3>
+                            <p>Seamless designs from 4K desktops to smartphones.</p>
                         </Motion.div>
 
                         <Motion.div
@@ -199,9 +135,21 @@ const Home = () => {
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
                         >
+                            <div className="feature-icon"><Shield size={28} /></div>
+                            <h3>Enterprise Logic</h3>
+                            <p>Robust architecture and clean code that scales.</p>
+                        </Motion.div>
+
+                        <Motion.div
+                            className="feature-card"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                        >
                             <div className="feature-icon"><CheckCircle size={28} /></div>
                             <h3>Reliable Delivery</h3>
-                            <p>Transparent communication and on-time delivery. No ghosting, no excuses.</p>
+                            <p>Transparent communication and on-time delivery.</p>
                         </Motion.div>
                     </div>
                 </div>
@@ -215,23 +163,20 @@ const Home = () => {
                     </div>
                     <div className="process-grid">
                         {processSteps.map((p, index) => {
-                            const StepIcon = p.icon;
+                            const icons = [Monitor, Code, Rocket, ShieldCheck];
+                            const StepIcon = icons[index];
                             return (
-                                <Motion.div
+                                <div
                                     key={index}
                                     className="process-step"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
                                 >
                                     <div className="process-icon"><StepIcon size={28} /></div>
-                                <span className="step-number">{p.step}</span>
-                                <h3>{p.title}</h3>
-                                <p>{p.desc}</p>
-                            </Motion.div>
-                            )}
-                        )}
+                                    <span className="step-number">{p.step}</span>
+                                    <h3>{p.title}</h3>
+                                    <p>{p.desc}</p>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
@@ -245,13 +190,9 @@ const Home = () => {
                     </div>
                     <div className="testimonials-grid">
                         {testimonials.map((t, index) => (
-                            <Motion.div
+                            <div
                                 key={index}
                                 className="testimonial-card"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
                             >
                                 <div className="testimonial-stars">
                                     {[...Array(t.rating)].map((_, i) => (
@@ -263,7 +204,7 @@ const Home = () => {
                                     <strong>{t.name}</strong>
                                     <span>{t.role}</span>
                                 </div>
-                            </Motion.div>
+                            </div>
                         ))}
                     </div>
                 </div>

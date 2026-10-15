@@ -14,12 +14,12 @@ const Logo = ({ size = 40, showText = true, className = '' }) => {
             >
                 <defs>
                     <linearGradient id="logoGrad1" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#3b82f6" />
-                        <stop offset="100%" stopColor="#06b6d4" />
+                        <stop offset="0%" stopColor="#e0e0e0" />
+                        <stop offset="100%" stopColor="#a3a3a3" />
                     </linearGradient>
                     <linearGradient id="logoGrad2" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stopColor="#1e40af" />
-                        <stop offset="100%" stopColor="#0ea5e9" />
+                        <stop offset="0%" stopColor="#ffffff" />
+                        <stop offset="100%" stopColor="#d4d4d4" />
                     </linearGradient>
                 </defs>
                 <path
@@ -31,7 +31,7 @@ const Logo = ({ size = 40, showText = true, className = '' }) => {
                     d="M18 44V26H30V44H40V14H30V26H18Z"
                     fill="url(#logoGrad2)"
                 />
-                <circle cx="24" cy="8" r="3" fill="#fff" />
+                <circle cx="24" cy="8" r="3" fill="#fafafa" />
             </svg>
             {showText && (
                 <span className="logo-text">

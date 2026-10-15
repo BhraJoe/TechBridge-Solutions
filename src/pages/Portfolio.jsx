@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Folder, Filter } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import './Portfolio.css';
 
-// Import images
 import projectFintech from '../assets/project-fintech.png';
 import projectEcommerce from '../assets/project-ecommerce.png';
 import projectHealth from '../assets/project-health.png';
@@ -17,21 +16,19 @@ const Portfolio = () => {
             id: 1,
             title: "FinTech Dashboard",
             category: "Fintech",
-            description: "A comprehensive financial analytics dashboard handling real-time data visualization and transaction processing.",
+            description: "Financial analytics dashboard with real-time data visualization and transaction processing.",
             tags: ["React", "D3.js", "Node.js"],
             image: projectFintech,
             link: "#",
-            featured: true
         },
         {
             id: 2,
             title: "E-Commerce Platform",
             category: "E-commerce",
-            description: "Full-stack e-commerce solution with custom cart logic, payment gateway integration, and admin panel.",
+            description: "Full-stack e-commerce solution with custom cart and payment gateway integration.",
             tags: ["Next.js", "Stripe", "PostgreSQL"],
             image: projectEcommerce,
             link: "#",
-            featured: false
         },
         {
             id: 3,
@@ -41,17 +38,15 @@ const Portfolio = () => {
             tags: ["React Native", "Firebase", "Redux"],
             image: projectHealth,
             link: "#",
-            featured: false
         },
         {
             id: 4,
             title: "Corporate Banking Portal",
             category: "Fintech",
-            description: "Secure enterprise portal for corporate clients to manage assets and liquidity.",
+            description: "Secure enterprise portal for managing assets and liquidity.",
             tags: ["TypeScript", "React", "Java Spring"],
             image: projectBanking,
             link: "#",
-            featured: false
         }
     ];
 
@@ -60,8 +55,6 @@ const Portfolio = () => {
     const filteredProjects = filter === 'All'
         ? projects
         : projects.filter(p => p.category === filter);
-
-    const featuredProject = projects.find(p => p.featured);
 
     return (
         <Motion.div
@@ -82,48 +75,14 @@ const Portfolio = () => {
                         <h1>Selected <span className="text-gradient">Works</span></h1>
                         <p className="hero-tagline">Innovation in every pixel</p>
                         <p className="hero-description">
-                            A curated selection of projects that demonstrate our ability to solve complex problems with elegant code.
+                            A curated selection of projects demonstrating our ability to solve complex problems with elegant code.
                         </p>
                     </Motion.div>
                 </div>
             </section>
 
-            {/* Featured Project Section */}
-            {filter === 'All' && featuredProject && (
-                <section className="section featured-section">
-                    <div className="container">
-                        <div className="section-label">Featured Project</div>
-                        <Motion.div
-                            className="featured-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="featured-image">
-                                <img src={featuredProject.image} alt={featuredProject.title} loading="eager" />
-                            </div>
-                            <div className="featured-content">
-                                <div className="featured-badge">{featuredProject.category}</div>
-                                <h2>{featuredProject.title}</h2>
-                                <p>{featuredProject.description}</p>
-                                <div className="project-tags">
-                                    {featuredProject.tags.map(tag => (
-                                        <span key={tag} className="tag">{tag}</span>
-                                    ))}
-                                </div>
-                                <div className="featured-links">
-                                    <a href={featuredProject.link} className="btn-primary">View Case Study</a>
-                                    <a href={featuredProject.link} className="btn-outline">Live Demo</a>
-                                </div>
-                            </div>
-                        </Motion.div>
-                    </div>
-                </section>
-            )}
-
             <section className="section portfolio-section">
                 <div className="container">
-                    {/* Filter Tabs */}
                     <div className="filter-tabs">
                         {categories.map(cat => (
                             <button

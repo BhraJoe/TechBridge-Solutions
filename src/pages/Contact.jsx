@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Bubbles } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import './Contact.css';
@@ -44,7 +44,7 @@ const Contact = () => {
                         <h1>Let's <span className="text-gradient">Talk</span></h1>
                         <p className="hero-tagline">Start Your Transformation</p>
                         <p className="hero-description">
-                            Ready to build something extraordinary? We're currently accepting new projects.
+                            Ready to build something extraordinary? We're accepting new projects.
                         </p>
                     </Motion.div>
                 </div>
@@ -65,11 +65,11 @@ const Contact = () => {
 
                         <h2>Contact Information</h2>
                         <p className="contact-intro">
-                            Fill out the form or contact us directly via the channels below.
+                            Fill out the form or contact us directly.
                             We're open for freelance projects and consulting.
                         </p>
 
-<div className="contact-details">
+                        <div className="contact-details">
                             <div className="contact-item">
                                 <div className="icon-box"><Mail size={20} /></div>
                                 <div>
@@ -87,8 +87,7 @@ const Contact = () => {
                         </div>
 
                         <a href="https://wa.me/233597059188" target="_blank" rel="noopener noreferrer" className="whatsapp-btn">
-                            <Bubbles size={22} />
-                            <span>Chat on WhatsApp</span>
+                            Chat on WhatsApp
                         </a>
                     </Motion.div>
 

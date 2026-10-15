@@ -1,23 +1,23 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import { Code, Server, Database, Layout, Terminal, Cpu, CheckCircle, Settings, Lightbulb, Shield, Users, RefreshCw, Award, Briefcase } from 'lucide-react';
+import { Code, Server, CheckCircle, Settings, Lightbulb, Shield, Users, RefreshCw, Award, Layout, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './About.css';
 
 const About = () => {
     const skills = [
-        { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind/CSS", "Framer Motion"] },
-        { category: "Backend", items: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB"] },
-        { category: "Tools & DevOps", items: ["Git", "Docker", "AWS", "Vercel", "CI/CD"] }
+        { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"] },
+        { category: "Backend", items: ["Node.js", "Express", "Python", "PostgreSQL"] },
+        { category: "Tools & DevOps", items: ["Git", "Docker", "AWS", "Vercel"] }
     ];
 
     const values = [
-        { title: "Simplicity", description: "Clean, uncomplicated solutions that work.", icon: CheckCircle },
-        { title: "Quality", description: "Attention to detail in every project.", icon: Settings },
-        { title: "Innovation", description: "Modern technologies and forward-thinking approaches.", icon: Lightbulb },
-        { title: "Reliability", description: "Solutions you can depend on.", icon: Shield },
-        { title: "Partnership", description: "Working closely with your team.", icon: Users },
-        { title: "Continuous Improvement", description: "Always learning and evolving.", icon: RefreshCw }
+        { title: "Simplicity", description: "Clean solutions that work." },
+        { title: "Quality", description: "Attention to detail in every project." },
+        { title: "Innovation", description: "Modern technologies and forward-thinking approaches." },
+        { title: "Reliability", description: "Solutions you can depend on." },
+        { title: "Partnership", description: "Working closely with your team." },
+        { title: "Continuous Improvement", description: "Always learning and evolving." }
     ];
 
     const team = [
@@ -34,7 +34,7 @@ const About = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            {/* UNIFIED HERO SECTION (Background Image Mode) */}
+            {/* UNIFIED HERO SECTION */}
             <section className="about-hero-section">
                 <div className="container about-container">
                     <Motion.div
@@ -49,13 +49,10 @@ const About = () => {
                         <div className="about-bio-text">
                             <p>
                                 We are TechBridge Solutions, a passionate team of Software Engineers based in Ghana with a global mindset.
-                                We founded this company with a singular mission: to bridge the gap between complex technology
-                                and real-world business outcomes, creating digital products that are not only functional but exceptional.
+                                We founded this company with a singular mission: to bridge the gap between complex technology and real-world business outcomes.
                             </p>
                             <p>
-                                With a background in full-stack development, we don't just write code; we architect solutions.
-                                Whether it's a high-performance marketing site or a complex web application, we bring
-                                engineering rigor and creative flair to every project.
+                                With a background in full-stack development, we architect solutions that are not only functional but exceptional.
                             </p>
                         </div>
 
@@ -114,7 +111,6 @@ const About = () => {
                     </div>
                     <div className="values-grid">
                         {values.map((value, index) => {
-                            const Icon = value.icon;
                             return (
                                 <Motion.div
                                     key={index}
@@ -125,7 +121,7 @@ const About = () => {
                                     transition={{ delay: index * 0.1 }}
                                 >
                                     <div className="value-icon">
-                                        <Icon size={28} />
+                                        <CheckCircle size={28} />
                                     </div>
                                     <h3>{value.title}</h3>
                                     <p>{value.description}</p>
