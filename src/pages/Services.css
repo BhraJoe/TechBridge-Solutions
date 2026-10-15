@@ -111,7 +111,7 @@
     color: var(--text-secondary);
     line-height: 1.7;
     max-width: 700px;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .services-hero-section .hero-cta {
@@ -119,6 +119,34 @@
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 0;
+}
+
+.services-hero-section .btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.42);
+    color: var(--text-primary);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(10px);
+}
+
+.services-hero-section .btn-outline:hover {
+    background: rgba(141, 188, 240, 0.08);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(141, 188, 240, 0.14);
+}
+
+.services-hero-section .btn-lg {
+    padding: 0.95rem 2.3rem;
+    font-size: 1rem;
 }
 
 /* ==================== WHAT WE BUILD ==================== */
@@ -180,6 +208,10 @@
 .service-card:hover .service-icon-wrapper {
     transform: scale(1.08);
     background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.service-card:hover .service-icon-wrapper svg {
     color: var(--bg-primary);
 }
 

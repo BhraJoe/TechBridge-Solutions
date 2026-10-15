@@ -101,6 +101,12 @@ const Services = () => {
                         <p className="hero-description">
                             Engineering forward-thinking digital experiences that drive business growth and innovation.
                         </p>
+                        <div className="hero-cta">
+                            <Link to="/portfolio" className="btn-outline btn-lg">
+                                View Our Portfolio
+                                <ArrowRight size={20} />
+                            </Link>
+                        </div>
                     </Motion.div>
                 </div>
             </section>
@@ -144,18 +150,6 @@ const Services = () => {
                         ))}
                     </Motion.div>
                     
-                    <Motion.div
-                        className="what-we-build-cta"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        <Link to="/portfolio" className="btn-outline btn-lg">
-                            View Our Portfolio
-                            <ArrowRight size={20} />
-                        </Link>
-                    </Motion.div>
                 </div>
             </section>
 
